@@ -133,13 +133,13 @@ export const ProjectsSection = () => {
       {/* Modal Zoom Image */}
       {zoomImage && (
         <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
           onClick={() => setZoomImage(null)}
         >
           <img
             src={zoomImage}
             alt="Zoom"
-            className="max-w-3xl max-h-[80vh] rounded-lg shadow-2xl transition-all duration-300"
+            className="w-[90%] sm:w-auto max-w-full max-h-[90vh] rounded-lg shadow-2xl object-contain transition-all duration-300"
           />
         </div>
       )}
