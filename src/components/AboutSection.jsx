@@ -19,7 +19,10 @@ export const AboutSection = () => {
     <section id="about" className="py-24 px-4 relative bg-background">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-16 text-center tracking-tight">
-          About <span className="text-primary">Me</span>
+          About{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500">
+            Me
+          </span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">

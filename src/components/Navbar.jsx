@@ -16,12 +16,13 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10); // ✅ Fix here
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <nav
       className={cn(
@@ -29,17 +30,16 @@ export const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between px-4">
+        {/* Logo */}
         <a
-          className="text-xl font-bold text-primary flex items-center"
           href="#hero"
+          className="text-2xl font-bold bg-gradient-to-r from-primary to-pink-500 text-transparent bg-clip-text"
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground"> Kace </span> Space
-          </span>
+          Kace<span className="text-foreground">Space</span>
         </a>
 
-        {/* desktop nav */}
+        {/* Desktop Nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -52,38 +52,39 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* mobile nav */}
-
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        <div
-          className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
-        >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div
+            className={cn(
+              "fixed inset-0 bg-background/95 backdrop-blur-lg z-40 flex flex-col items-center justify-center transform transition-all duration-300 md:hidden",
+              isMenuOpen
+                ? "opacity-100 translate-y-0 pointer-events-auto"
+                : "opacity-0 -translate-y-10 pointer-events-none"
+            )}
+          >
+            <div className="flex flex-col space-y-8 text-2xl font-semibold">
+              {navItems.map((item, key) => (
+                <a
+                  key={key}
+                  href={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-foreground/80 hover:text-primary transition-all duration-300"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   );
