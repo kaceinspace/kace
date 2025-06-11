@@ -19,10 +19,7 @@ export const AboutSection = () => {
     <section id="about" className="py-24 px-4 relative bg-background">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-16 text-center tracking-tight">
-          About{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500">
-            Me
-          </span>
+          About <span className="text-primary">Me</span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -35,18 +32,25 @@ export const AboutSection = () => {
             className="space-y-6"
           >
             <h2 className="text-2xl md:text-3xl font-semibold leading-snug">
-              Web & Mobile Developer
+              Educator & Full-Stack Developer
             </h2>
 
             <p className="text-muted-foreground leading-relaxed">
-              With over 5 years of experience, I build responsive, performant
-              web apps using modern tech. I love solving real problems with
-              elegant code and pixel-perfect designs.
+              I’ve spent the past 9 years teaching at SMK Assalaam Bandung,
+              where I share my knowledge and passion for programming with the
+              next generation of developers.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
-              Always learning, always evolving — I thrive in fast-paced
-              environments where innovation meets execution.
+              Outside the classroom, I dive into code — working with
+              technologies like PHP, JavaScript, Express, Laravel, Vue, Flutter,
+              Dart, and more. I love crafting digital solutions that are clean,
+              efficient, and user-centric.
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              Lifelong learner, passionate teacher, and full-time tinkerer.
+              Let’s build something awesome together.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -72,12 +76,12 @@ export const AboutSection = () => {
               {
                 icon: <Code className="h-6 w-6 text-primary" />,
                 title: "Web Development",
-                desc: "Responsive websites and scalable applications with modern frameworks.",
+                desc: "Specializing in Laravel, Vue, and modern JavaScript to build scalable, responsive, and interactive web applications.",
               },
               {
                 icon: <User className="h-6 w-6 text-primary" />,
                 title: "Mobile Development",
-                desc: "Building fast, user-friendly mobile apps with seamless performance across iOS and Android.",
+                desc: "Creating beautiful and performant mobile apps using Flutter & Dart — seamless experiences across platforms.",
               },
             ].map((item, i) => (
               <motion.div
