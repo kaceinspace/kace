@@ -31,6 +31,26 @@ const projects = [
     demoUrl: "#",
     githubUrl: "#",
   },
+  {
+    id: 4,
+    title: "Update Bandung",
+    description:
+      "A dynamic news portal dedicated to Bandung updates, built with Laravel and JavaScript to deliver real-time information and user engagement features.",
+    image: "/projects/updatebandung.png",
+    tags: ["PHP", "Laravel", "JavaScript"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 5,
+    title: "E-Library Assalaam VHS",
+    description:
+      "A complete digital library management system for Assalaam VHS, enabling online book borrowing, user management, and fine tracking with Laravel.",
+    image: "/projects/elibrary.png",
+    tags: ["PHP", "Laravel", "JavaScript"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
 ];
 
 export const ProjectsSection = () => {
