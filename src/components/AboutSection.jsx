@@ -36,9 +36,9 @@ export const AboutSection = () => {
             </h2>
 
             <p className="text-muted-foreground leading-relaxed">
-              I’ve spent the past 9 years teaching at SMK Assalaam Bandung,
-              where I share my knowledge and passion for programming with the
-              next generation of developers.
+              I’am teaching at SMK Assalaam Bandung, where I share my knowledge
+              and passion for programming with the next generation of
+              developers.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
